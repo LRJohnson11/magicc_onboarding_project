@@ -20,8 +20,8 @@ target_include_directories(rviz_hallway_publisher
    PRIVATE
     include/rviz_hallway_publisher
     ${EIGEN3_INCLUDE_DIRS})
-ament_target_dependencies(rviz_hallway_publisher rclcpp visualization_msgs Eigen3)
-target_link_libraries(rviz_hallway_publisher ${ament_LIBRARIES})
+ament_target_dependencies(rviz_hallway_publisher rclcpp visualization_msgs Eigen3 ament_index_cpp)
+# target_link_libraries(rviz_hallway_publisher ${ament_LIBRARIES})
 install(
   TARGETS rviz_hallway_publisher
   DESTINATION lib/${PROJECT_NAME})
@@ -32,6 +32,7 @@ install(
 
 install(PROGRAMS
   scripts/walls_sensor.py
+  scripts/generic.py
   DESTINATION lib/${PROJECT_NAME})
 
 
